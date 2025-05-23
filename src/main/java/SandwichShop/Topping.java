@@ -1,13 +1,10 @@
 package SandwichShop;
 
-public class Topping {
+public abstract class Topping {
     private String name;
-    private boolean isExtra;
-    private String type;
 
-    public Topping(String type, boolean isExtra, String name) {
-        this.type = type;
-        this.isExtra = isExtra;
+
+    public Topping (String name) {
         this.name = name;
     }
 
@@ -20,19 +17,6 @@ public class Topping {
         this.name = name;
     }
 
-    public boolean isExtra() {
-        return isExtra;
-    }
-
-    public void setExtra(boolean extra) {
-        isExtra = extra;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+    public abstract double getPrice(int sandwichSize);
+    public abstract String getDescription();
 }
