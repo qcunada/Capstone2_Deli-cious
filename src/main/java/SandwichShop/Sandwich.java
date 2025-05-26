@@ -64,12 +64,17 @@ public class Sandwich implements MenuItem {
 
     @Override
     public double getPrice() {
-        return switch (size){
+       double price = switch (size){
             case 4 -> 5.50;
             case 8 -> 7.00;
             case 12 -> 8.50;
             default -> 0;
         };
+
+        for (Topping t: toppings){
+            price += t.getPrice(size) ;
+        }
+        return price;
     }
 
     @Override

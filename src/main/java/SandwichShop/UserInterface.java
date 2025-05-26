@@ -13,7 +13,7 @@ public class UserInterface {
             System.out.println("\n\uD83E\uDD6AWelcome to the DELI-cious Sandwich Shop! \uD83E\uDD6A\n" + "       -How can we help you today?-");
             System.out.println("       [1] Create new Order");
             System.out.println("       [0] Exit");
-            System.out.println("   Choose an option: ");
+            System.out.print("   Choose an option: ");
 
 
             try {
@@ -45,14 +45,14 @@ public class UserInterface {
             System.out.println("    [3] Add Chips");
             System.out.println("    [4] Checkout");
             System.out.println("    [0] Exit");
-            System.out.println("Choose an option: ");
+            System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1 -> addSandwich();
-//                    case 2 -> addDrink();
+                case 2 -> addDrink();
 //                    case 3 -> addChips();
 //                    case 4 -> checkout();
                 case 0 -> {
@@ -72,9 +72,9 @@ public class UserInterface {
         String bread = "";
         while (true) {
 
-            System.out.println("What type of bread do you want for your sandwich? \uD83C\uDF5E");
+            System.out.println("\nWhat type of bread do you want for your sandwich? \uD83C\uDF5E");
             System.out.println("Choices include : White | Wheat | Rye | Wrap");
-            System.out.println("Bread choice: ");
+            System.out.print("Bread choice: ");
             bread = scanner.nextLine().trim();
 
             //this makes sure that the input is included in the choices
@@ -90,12 +90,13 @@ public class UserInterface {
         while (true) {
             System.out.println("\nWhat size of sandwich would you like? \uD83D\uDCCF");
             System.out.println("Choices include: 4inches $5.50 | 8inches $7.00 | 12inches $8.50");
-            System.out.println("Size choice ,[4,8 or 12]: ");
+            System.out.print("Size choice [4,8 or 12]: ");
 
             String input = scanner.nextLine().trim();
 
             if (input.equals("4") || input.equals("8") || input.equals("12")) {
-                size = Integer.parseInt(input); // safe to parse
+                size = Integer.parseInt(input);
+
                 break;
             } else {
                 System.out.println("\n ** Invalid size. Please enter exactly 4, 8, or 12. ** \n");
@@ -106,7 +107,7 @@ public class UserInterface {
         while (true) {
             System.out.println("\nChoose a sauce for your sandwich \uD83E\uDD6B");
             System.out.println("Choices include: Mayo | Mustard | Ketchup | Ranch | Thousand Islands | Vinaigrette ");
-            System.out.println("Sauce choice: ");
+            System.out.print("Sauce choice: ");
             sauce = scanner.nextLine().trim();
 
             if (sauce.equalsIgnoreCase("Mayo") ||
@@ -143,6 +144,7 @@ public class UserInterface {
                 }
                 case "cheese" -> {
                     System.out.println("\nAvailable cheeses: American | Provolone | Cheddar | Swiss | Mozzarella");
+                    System.out.println("Added cheese prices:\n 4inch $0.75 [extra + $0.30] \n 8inch $1.50 [extra + $0.60] \n 12inch $2.25 [extra + $0.90]");
                 }
                 case "regular" -> {
                     System.out.println("\nAvailable regular toppings: Lettuce | Tomato | Onion | Pickles | Jalapenos");
@@ -152,43 +154,43 @@ public class UserInterface {
                     continue;
                 }
             }
-         String name = "";
-         boolean validTopping = false;
+            String name = "";
+            boolean validTopping = false;
 
-         while (!validTopping) {
-            System.out.println("\nTopping to add: ");
-             name = scanner.nextLine().trim();
+            while (!validTopping) {
+                System.out.println("\nTopping to add: ");
+                name = scanner.nextLine().trim();
 
-             switch (type) {
-                 case "meat" -> {
-                     if (name.equalsIgnoreCase("Steak") || name.equalsIgnoreCase("Ham") ||
-                             name.equalsIgnoreCase("Salami") || name.equalsIgnoreCase("Roast Beef") ||
-                             name.equalsIgnoreCase("Chicken") || name.equalsIgnoreCase("Bacon")) {
-                         validTopping = true;
-                     } else {
-                         System.out.println("❌ Invalid meat. Please choose from -> Steak | Ham | Salami | Roast Beef | Chicken | Bacon");
-                     }
-                 }
-                 case "cheese" -> {
-                     if (name.equalsIgnoreCase("American") || name.equalsIgnoreCase("Provolone") ||
-                             name.equalsIgnoreCase("Cheddar") || name.equalsIgnoreCase("Swiss") ||
-                             name.equalsIgnoreCase("Mozzarella")) {
-                         validTopping = true;
-                     } else {
-                         System.out.println("❌ Invalid cheese. Please choose from: American | Provolone | Cheddar | Swiss | Mozzarella");
-                     }
-                 }
-                 case "regular" -> {
-                     if (name.equalsIgnoreCase("Lettuce") || name.equalsIgnoreCase("Tomato") ||
-                             name.equalsIgnoreCase("Onion") || name.equalsIgnoreCase("Pickles") ||
-                             name.equalsIgnoreCase("Jalapenos")) {
-                         validTopping = true;
-                     } else {
-                         System.out.println("❌ Invalid topping. Please choose from: Lettuce | Tomato | Onion | Pickles | Jalapenos");
-                     }
-                 }
-             }
-         }
+                switch (type) {
+                    case "meat" -> {
+                        if (name.equalsIgnoreCase("Steak") || name.equalsIgnoreCase("Ham") ||
+                                name.equalsIgnoreCase("Salami") || name.equalsIgnoreCase("Roast Beef") ||
+                                name.equalsIgnoreCase("Chicken") || name.equalsIgnoreCase("Bacon")) {
+                            validTopping = true;
+                        } else {
+                            System.out.println("❌ Invalid meat. Please choose from -> Steak | Ham | Salami | Roast Beef | Chicken | Bacon");
+                        }
+                    }
+                    case "cheese" -> {
+                        if (name.equalsIgnoreCase("American") || name.equalsIgnoreCase("Provolone") ||
+                                name.equalsIgnoreCase("Cheddar") || name.equalsIgnoreCase("Swiss") ||
+                                name.equalsIgnoreCase("Mozzarella")) {
+                            validTopping = true;
+                        } else {
+                            System.out.println("❌ Invalid cheese. Please choose from: American | Provolone | Cheddar | Swiss | Mozzarella");
+                        }
+                    }
+                    case "regular" -> {
+                        if (name.equalsIgnoreCase("Lettuce") || name.equalsIgnoreCase("Tomato") ||
+                                name.equalsIgnoreCase("Onion") || name.equalsIgnoreCase("Pickles") ||
+                                name.equalsIgnoreCase("Jalapenos")) {
+                            validTopping = true;
+                        } else {
+                            System.out.println("❌ Invalid topping. Please choose from: Lettuce | Tomato | Onion | Pickles | Jalapenos");
+                        }
+                    }
+                }
+            }
 
             boolean extra = false;
             if (type.equals("meat") || type.equals("cheese")) {
@@ -207,11 +209,46 @@ public class UserInterface {
             System.out.print("\nType 'add more' to add more toppings or type 'done' to finish: ");
             String next = scanner.nextLine().trim().toLowerCase();
             if (next.equals("done")) {
-                System.out.println(" Finished adding toppings.");
+                System.out.println(" \nFinished adding toppings.");
                 break;
 
             }
+            sandwich.addTopping(topping);
+            currentOrder.addItem(sandwich);
+            System.out.println("Sandwich added!");
         }
+    }
+
+    public void addDrink() {
+        System.out.println("What Drink would you like?");
+        System.out.println("\nClassic Cola\n" +
+                "A refreshing carbonated soft drink served chilled.\n" +
+                "\n" +
+                "Iced Lemon Tea\n" +
+                "Black tea with a splash of lemon over ice—light and zesty.\n" +
+                "\n" +
+                "Bottled Water\n" +
+                "Pure, crisp bottled water to keep it simple and hydrating.\n" +
+                "\n" +
+                "Sparkling Berry Fizz\n" +
+                "Fruity sparkling water with a mix of strawberry and raspberry flavors.\n" +
+                "\n" +
+                "Fresh Orange Juice\n" +
+                "100% squeezed orange juice—no added sugar, just sunshine.\n" +
+                "\n" +
+                "Cold Brew Coffee\n" +
+                "Smooth and bold cold brew made from freshly ground beans, served over ice.");
+
+        System.out.println("\nEnter Drink \uD83E\uDD64 : ");
+
+        String name = scanner.nextLine();
+
+        System.out.println("Enter Drink Size : \n Small 2.00 | Medium 2.50 | Large 3.00");
+        String size = scanner.nextLine();
+
+
+        currentOrder.addItem(new Drink(name,size));
+        System.out.println("Drink added \uD83E\uDD64");
     }
 }
 
