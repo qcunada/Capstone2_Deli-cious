@@ -42,11 +42,11 @@ public class UserInterface {
 
         while (true) {
             System.out.println("\n     ======= ORDER MENU ======= \n What can I get you for your order?");
-            System.out.println("    [1] Create my own Sandwich");
-            System.out.println("    [2] Add Drink");
-            System.out.println("    [3] Add Chips");
-            System.out.println("    [4] Checkout");
-            System.out.println("    [0] Exit");
+            System.out.println("    [1] \uD83E\uDD6A Create my own Sandwich ");
+            System.out.println("    [2] \uD83E\uDD64 Add Drink  ");
+            System.out.println("    [3] \uD83E\uDD54 Add Chips ");
+            System.out.println("    [4] \uD83E\uDDFE Checkout ");
+            System.out.println("    [0] \uD83D\uDE80 Exit ");
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
@@ -65,6 +65,10 @@ public class UserInterface {
 
             }
         }
+
+    }
+    public void chooseSandwich(){
+        System.out.println("=== Choose your Sandwich! ===");
 
     }
 
@@ -223,6 +227,7 @@ public class UserInterface {
     }
 
     public void addDrink() {
+
         System.out.println("What Drink would you like?");
         System.out.println("\nClassic Cola \uD83E\uDD64\n" +
                 "A refreshing carbonated soft drink served chilled.\n" +
@@ -239,21 +244,38 @@ public class UserInterface {
                 "Fresh Orange Juice \uD83C\uDF4A\n" +
                 "100% squeezed orange juice—no added sugar, just sunshine.\n" +
                 "\n" +
-                "Cold Brew Coffee ☕\n" +
+                "Cold Brew Coffee \uD83E\uDDCB\n" +
                 "Smooth and bold cold brew made from freshly ground beans, served over ice.");
 
 
-        System.out.println("\nDrink Choices: Cola | Tea | Water | Fizz | Orange | Coffee \nSmall 2.00 | Medium 2.50 | Large 3.00");
-        System.out.print("\nEnter Drink \uD83E\uDD64: ");
+        System.out.println("\nDrink Choices: Cola | Tea | Water | Fizz | Orange | Coffee \nSmall 2.00 | Medium 2.50 | Large 3.00\n");
 
-        String name = scanner.nextLine();
+        Set<String> validChoices = new HashSet<>(Arrays.asList("cola", "tea" , "water", "fizz" , "orange", "coffee"));
 
+
+
+        String name;
+        while (true) {
+            System.out.print("Enter Drink \uD83E\uDD64: ");
+            name = scanner.nextLine().trim().toLowerCase();
+
+
+
+            if (validChoices.contains(name)){
+
+                System.out.println("\nYou selected " + name.toUpperCase() + ". Very Refreshing!\n ");
+                break;
+            }else {
+                System.out.println("Invalid drink. Choose from: Cola | Tea | Water | Fizz | Orange | Coffee ");
+            }
+
+        }
         System.out.print("Enter Drink Size : ");
         String size = scanner.nextLine();
 
 
         currentOrder.addItem(new Drink(name,size));
-        System.out.println("\nDrink added \uD83E\uDD64.");
+        System.out.println("\nOne " + size + " "+ name + " added to your order! \uD83E\uDD64.");
     }
     public void addChips(){
         System.out.println("\nClassic Sea Salt Chips \uD83E\uDDC2\n" +
@@ -292,6 +314,17 @@ public class UserInterface {
         System.out.println("\n--------Order Details--------");
         System.out.println(currentOrder.getOrderDetails());
         System.out.println("------------------------------");
+
+        System.out.print("Confirm order? (yes/no): ");
+        if (scanner.nextLine().equalsIgnoreCase("yes")) {
+            ReceiptGenerator.generate(currentOrder);
+            System.out.println("Order confirmed. Receipt saved.");
+        } else {
+            System.out.println("Order canceled.");
+        }
+
+        currentOrder = null;
     }
+
 }
 
