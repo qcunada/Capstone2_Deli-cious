@@ -14,6 +14,6 @@ public class Chips implements MenuItem {
 
     @Override
     public String getDescription() {
-        return "Chips: " + name + " | $" + getPrice();
+        return "Chips: " + name + " | $" + String.format("%.2f",getPrice());
     }
 }

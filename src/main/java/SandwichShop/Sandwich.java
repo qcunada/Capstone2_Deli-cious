@@ -79,6 +79,15 @@ public class Sandwich implements MenuItem {
 
     @Override
     public String getDescription() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(size).append("\" ").append(bread).append(" sandwich");
+        if (toasted) sb.append(" (toasted)");
+        sb.append("\nToppings: ");
+        for (Topping t : toppings) {
+            sb.append(t.getDescription()).append("\n");
+        }
+        sb.append("\nSauce: ").append(sauce).append("\nPrice: $").append(String.format("%.2f", getPrice()));
+        return sb.toString();
+
     }
 }

@@ -1,7 +1,9 @@
 package SandwichShop;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
-
+import java.util.Set;
 
 
 public class UserInterface {
@@ -53,8 +55,8 @@ public class UserInterface {
             switch (choice) {
                 case 1 -> addSandwich();
                 case 2 -> addDrink();
-//                    case 3 -> addChips();
-//                    case 4 -> checkout();
+                case 3 -> addChips();
+                case 4 -> checkOut();
                 case 0 -> {
                     System.out.println("\nOrder Cancelled. Taking you back to the main menu screen.");
                     return;
@@ -206,49 +208,90 @@ public class UserInterface {
             System.out.println("\n✅ Added: " + name + (extra ? " (extra)" : ""));
 
             // Ask if they want to continue or finish
-            System.out.print("\nType 'add more' to add more toppings or type 'done' to finish: ");
+            System.out.print("\nPress 'enter' to add more toppings or type 'done' to finish: ");
             String next = scanner.nextLine().trim().toLowerCase();
             if (next.equals("done")) {
                 System.out.println(" \nFinished adding toppings.");
+                System.out.println("Sandwich added to the cart!");
                 break;
 
             }
-            sandwich.addTopping(topping);
-            currentOrder.addItem(sandwich);
-            System.out.println("Sandwich added!");
+
+
         }
+        currentOrder.addItem(sandwich);
     }
 
     public void addDrink() {
         System.out.println("What Drink would you like?");
-        System.out.println("\nClassic Cola\n" +
+        System.out.println("\nClassic Cola \uD83E\uDD64\n" +
                 "A refreshing carbonated soft drink served chilled.\n" +
                 "\n" +
-                "Iced Lemon Tea\n" +
+                "Iced Lemon Tea \uD83C\uDF4B\n" +
                 "Black tea with a splash of lemon over ice—light and zesty.\n" +
                 "\n" +
-                "Bottled Water\n" +
+                "Bottled Water \uD83D\uDCA7\n" +
                 "Pure, crisp bottled water to keep it simple and hydrating.\n" +
                 "\n" +
-                "Sparkling Berry Fizz\n" +
+                "Sparkling Berry Fizz \uD83C\uDF53\n" +
                 "Fruity sparkling water with a mix of strawberry and raspberry flavors.\n" +
                 "\n" +
-                "Fresh Orange Juice\n" +
+                "Fresh Orange Juice \uD83C\uDF4A\n" +
                 "100% squeezed orange juice—no added sugar, just sunshine.\n" +
                 "\n" +
-                "Cold Brew Coffee\n" +
+                "Cold Brew Coffee ☕\n" +
                 "Smooth and bold cold brew made from freshly ground beans, served over ice.");
 
-        System.out.println("\nEnter Drink \uD83E\uDD64 : ");
+
+        System.out.println("\nDrink Choices: Cola | Tea | Water | Fizz | Orange | Coffee \nSmall 2.00 | Medium 2.50 | Large 3.00");
+        System.out.print("\nEnter Drink \uD83E\uDD64: ");
 
         String name = scanner.nextLine();
 
-        System.out.println("Enter Drink Size : \n Small 2.00 | Medium 2.50 | Large 3.00");
+        System.out.print("Enter Drink Size : ");
         String size = scanner.nextLine();
 
 
         currentOrder.addItem(new Drink(name,size));
-        System.out.println("Drink added \uD83E\uDD64");
+        System.out.println("\nDrink added \uD83E\uDD64.");
+    }
+    public void addChips(){
+        System.out.println("\nClassic Sea Salt Chips \uD83E\uDDC2\n" +
+                "Crispy kettle-cooked chips with a pinch of sea salt.\n" +
+                "\n" +
+                "Barbecue Crunch Chips \uD83C\uDF56\n" +
+                "Smoky, sweet, and tangy BBQ flavor with a bold crunch.\n" +
+                "\n" +
+                "Sour Cream & Onion Chips \uD83E\uDDC5\n" +
+                "Creamy, tangy, and irresistibly savory.\n" +
+                "\n" +
+                "Spicy Jalapeño Chips \uD83C\uDF36\uFE0F\n" +
+                "Zesty and hot with a satisfying heat kick.");
+
+        System.out.println("\nClassic | BBQ | Onion | Jalapeno\n Price: 1.50");
+
+
+        Set<String> validChoices = new HashSet<>(Arrays.asList("classic", "bbq" , "onion", "jalapeno"));
+
+        String name;
+        while (true) {
+            System.out.println("Enter chip name of choice \uD83E\uDD54: ");
+            name = scanner.nextLine().trim().toLowerCase();
+
+            if (validChoices.contains(name)){
+                System.out.println("\nYou selected " + name.toUpperCase() + " chips. Good Choice!");
+                break;
+            }else {
+                System.out.println("Invalid item. Choose from: Classic | BBQ | Onion | Jalapeno ");
+            }
+        }
+        currentOrder.addItem(new Chips(name));
+        System.out.println("Chips added to the cart.");
+    }
+    public void checkOut(){
+        System.out.println("\n--------Order Details--------");
+        System.out.println(currentOrder.getOrderDetails());
+        System.out.println("------------------------------");
     }
 }
 

@@ -23,7 +23,7 @@ public class Order {
         for (MenuItem item: items){
             sb.append(item.getDescription()).append('\n');
         }
-        sb.append(String.format("Total: $%.2f\n" + getTotal()));
+        sb.append(String.format("Total: $%.2f", getTotal()));
         return sb.toString();
     }
 }
