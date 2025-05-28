@@ -12,7 +12,7 @@ public class UserInterface {
 
     public void startScreen() {
         while (true) {
-            System.out.println("\n\uD83E\uDD6AWelcome to the DELI-cious Sandwich Shop! \uD83E\uDD6A\n" + "       -How can we help you today?-");
+            System.out.println("\n\uD83E\uDD6AWelcome to the * Bread & Butter * Sandwich Shop! \uD83E\uDD6A\n" + "       -How can we help you today?-");
             System.out.println("       [1] Create new Order");
             System.out.println("       [0] Exit");
             System.out.print("   Choose an option: ");
@@ -42,10 +42,11 @@ public class UserInterface {
 
         while (true) {
             System.out.println("\n     ======= ORDER MENU ======= \n What can I get you for your order?");
-            System.out.println("    [1] \uD83E\uDD6A Create my own Sandwich ");
-            System.out.println("    [2] \uD83E\uDD64 Add Drink  ");
-            System.out.println("    [3] \uD83E\uDD54 Add Chips ");
-            System.out.println("    [4] \uD83E\uDDFE Checkout ");
+            System.out.println("    [1] \uD83E\uDD6A Choose my own Sandwich ");
+            System.out.println("    [2] ⚙\uFE0F Build my own Sandwich ");
+            System.out.println("    [3] \uD83E\uDD64 Add Drink  ");
+            System.out.println("    [4] \uD83E\uDD54 Add Chips ");
+            System.out.println("    [5] \uD83E\uDDFE Checkout ");
             System.out.println("    [0] \uD83D\uDE80 Exit ");
             System.out.print("Choose an option: ");
 
@@ -53,10 +54,11 @@ public class UserInterface {
             scanner.nextLine();
 
             switch (choice) {
-                case 1 -> addSandwich();
-                case 2 -> addDrink();
-                case 3 -> addChips();
-                case 4 -> checkOut();
+                case 1 -> chooseSandwich();
+                case 2 -> addSandwich();
+                case 3 -> addDrink();
+                case 4 -> addChips();
+                case 5 -> checkOut();
                 case 0 -> {
                     System.out.println("\nOrder Cancelled. Taking you back to the main menu screen.");
                     return;
@@ -68,7 +70,44 @@ public class UserInterface {
 
     }
     public void chooseSandwich(){
-        System.out.println("=== Choose your Sandwich! ===");
+        System.out.println("\n=== Choose your Sandwich! ===\n");
+        System.out.println("[1] The Classic \uD83E\uDDC0 | $8.50   \n8\" white, ham, cheddar, lettuce, tomato, mayo\n ");
+        System.out.println("[2] The Veggie Wrap \uD83E\uDD6C | $10.75   \n12\" wrap, provolone, pickles, jalapenos, vinaigrette\n ");
+        System.out.println("[3] The Meat Lover \uD83E\uDD69 | $22.75  \n12\" rye, steak, ham, roast beef, cheddar, bacon, mustard\n  ");
+        System.out.println("Choose your selected sandwich [1-3]: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        Sandwich sandwich = null;
+
+        switch (choice) {
+            case 1 -> {
+                sandwich = new Sandwich(8,"white","mayo", false,"The Classic");
+                sandwich.addTopping(new PremiumTopping("cheddar",false,"cheese"));
+                sandwich.addTopping(new RegularTopping("lettuce"));
+                sandwich.addTopping(new RegularTopping("tomato"));
+            }
+            case 2 -> {
+                sandwich = new Sandwich(12,"wrap", "vinaigrette",false,"The Veggie Wrap");
+                sandwich.addTopping(new PremiumTopping("provolone", false, "cheese"));
+                sandwich.addTopping(new RegularTopping("pickles"));
+                sandwich.addTopping(new RegularTopping("jalapenos"));
+            }
+            case 3 -> {
+                sandwich = new Sandwich(12,"rye","mustard",true,"The Meat Lover");
+                sandwich.addTopping(new PremiumTopping("steak",false,"meat"));
+                sandwich.addTopping(new PremiumTopping("ham",false,"meat"));
+                sandwich.addTopping(new PremiumTopping("roast beef",false,"meat"));
+                sandwich.addTopping(new PremiumTopping("cheddar",false,"cheese"));
+                sandwich.addTopping(new PremiumTopping("bacon",false,"meat"));
+            }
+            default -> System.out.println("Invalid selection. Select from choices 1 - 3");
+        }
+        if (sandwich != null) {
+            currentOrder.addItem(sandwich);
+            System.out.println("You selected '" + sandwich + "'.");
+            System.out.println("Your sandwich has been added to the cart.");
+        }
 
     }
 
@@ -95,7 +134,7 @@ public class UserInterface {
         int size = 0;
         while (true) {
             System.out.println("\nWhat size of sandwich would you like? \uD83D\uDCCF");
-            System.out.println("Choices include: 4inches $5.50 | 8inches $7.00 | 12inches $8.50");
+            System.out.println("Choices include: 4\" $5.50 | 8\" $7.00 | 12\" $8.50");
             System.out.print("Size choice [4,8 or 12]: ");
 
             String input = scanner.nextLine().trim();

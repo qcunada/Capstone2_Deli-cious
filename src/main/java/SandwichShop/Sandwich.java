@@ -8,6 +8,7 @@ public class Sandwich implements MenuItem {
     private String bread;
     private String sauce;
     private boolean toasted;
+    private String name;
     private List<Topping> toppings = new ArrayList<>();
 
     public Sandwich(int size, String bread, String sauce, boolean toasted) {
@@ -15,6 +16,23 @@ public class Sandwich implements MenuItem {
         this.bread = bread;
         this.sauce = sauce;
         this.toasted = toasted;
+
+    }
+    public Sandwich(int size, String bread, String sauce, boolean toasted, String name) {
+        this.size = size;
+        this.bread = bread;
+        this.sauce = sauce;
+        this.toasted = toasted;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name != null ? name : size + "\" " + bread + " sandwich";
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 
     public int getSize() {
@@ -57,6 +75,7 @@ public class Sandwich implements MenuItem {
         this.toppings = toppings;
     }
 
+
     public void addTopping(Topping topping){
         toppings.add(topping);
     }
@@ -80,13 +99,13 @@ public class Sandwich implements MenuItem {
     @Override
     public String getDescription() {
         StringBuilder sb = new StringBuilder();
-        sb.append(size).append("\" ").append(bread).append(" sandwich");
+        sb.append("\n").append(size).append("\" ").append(bread).append(" sandwich\n");
         if (toasted) sb.append(" (toasted)");
-        sb.append("\nToppings: ");
+        sb.append("Toppings:\n");
         for (Topping t : toppings) {
-            sb.append(t.getDescription()).append("\n");
+            sb.append("-").append(t.getDescription()).append("\n");
         }
-        sb.append("\nSauce: ").append(sauce).append("\nPrice: $").append(String.format("%.2f", getPrice()));
+        sb.append("Sauce: ").append(sauce).append("\n").append("Sandwich cost:     $").append(String.format("%.2f", getPrice()));
         return sb.toString();
 
     }

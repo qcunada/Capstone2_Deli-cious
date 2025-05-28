@@ -21,7 +21,7 @@ public class Drink implements MenuItem{
 
     @Override
     public String getDescription() {
-        return "Drink: " + name + " |  $" + String.format("%.2f",getPrice()) ;
+        return "Drink: " + name + "       $" + String.format("%.2f",getPrice()) ;
     }
 
 

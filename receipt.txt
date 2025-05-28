@@ -59,3 +59,81 @@ Drink: cola |  $3.00
 Chips: onion | $1.50
 Total: $4.50
 ------------------------
+------------------------
+05-27-2025 03:55 PM
+8" wrap sandwich (toasted)
+Toppings: swiss (extra)
+chicken
+
+Sauce: mayo
+Price: $11.10
+Total: $11.10
+------------------------
+------------------------
+05-27-2025 06:53 PM
+8" wrap sandwich (toasted)
+Toppings: salami (extra)
+swiss (extra)
+bacon
+
+Sauce: mayo
+Price: $14.10
+Chips: onion | $1.50
+4" rye sandwich
+Toppings: 
+Sauce: ketchup
+Price: $5.50
+Total: $21.10
+------------------------
+------------------------
+05-28-2025 10:19 AM
+
+12" wrap sandwich
+
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+
+Sandwich cost: $10.75
+Total: $10.75
+------------------------
+------------------------
+05-28-2025 11:01 AM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost: $8.50
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost: $10.75
+
+Total: $19.25
+------------------------
+------------------------
+05-28-2025 11:49 AM
+
+12" rye sandwich
+ (toasted)Toppings:
+-steak
+-ham
+-roast beef
+-cheddar
+-bacon
+Sauce: mustard
+Sandwich cost:     $22.75
+Drink: orange       $2.00
+Chips: classic      $1.50
+
+Total: $26.25
+------------------------
