@@ -137,3 +137,282 @@ Chips: classic      $1.50
 
 Total: $26.25
 ------------------------
+------------------------
+05-28-2025 12:20 PM
+
+12" rye sandwich
+ (toasted)Toppings:
+-swiss (extra)
+-steak (extra)
+Sauce: ketchup
+Sandwich cost:     $16.15
+Drink: coffee       $3.00
+
+Total: $21.15
+------------------------
+------------------------
+05-28-2025 12:28 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+
+Total: $10.50Tip: $%.2f2.0
+------------------------
+------------------------
+05-28-2025 12:31 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+
+Total: $9.50
+Tip: $1.00
+------------------------
+------------------------
+05-28-2025 12:35 PM
+
+12" rye sandwich
+ (toasted)Toppings:
+-steak
+-ham
+-roast beef
+-cheddar
+-bacon
+Sauce: mustard
+Sandwich cost:     $22.75
+Tip: $1.00
+
+Total: $23.75
+Tip: $1.00
+------------------------
+------------------------
+05-28-2025 12:36 PM
+
+12" rye sandwich
+ (toasted)Toppings:
+-steak
+-ham
+-roast beef
+-cheddar
+-bacon
+Sauce: mustard
+Sandwich cost:     $22.75
+Tip: $4.00
+
+Total: $26.75
+
+------------------------
+------------------------
+05-28-2025 12:43 PM
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+Drink: cola       $3.00
+
+Total: $15.75
+
+------------------------
+------------------------
+05-28-2025 12:47 PM
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+Drink: coffee       $2.00
+Tip: 2.0
+Total: $14.75
+
+------------------------
+------------------------
+05-28-2025 12:53 PM
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+Drink: cola       $2.50
+
+Subtotal: $18.25
+
+Tip: 5.0
+------------------------
+------------------------
+05-28-2025 01:09 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+Drink: cola       $2.00
+Chips: jalapeno      $1.50
+
+Subtotal: $16.00
+Subtotal: 12.0
+Tip: 4.0Total: 16.0------------------------
+05-28-2025 01:12 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+
+12" rye sandwich
+ (toasted)Toppings:
+-steak
+-ham
+-roast beef
+-cheddar
+-bacon
+Sauce: mustard
+Sandwich cost:     $22.75
+
+Subtotal: $47.00
+Subtotal: 42.0
+Tip: 5.0Total: $47.00
+------------------------
+05-28-2025 01:16 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+Drink: cola       $2.00
+Chips: jalapeno      $1.50
+
+Subtotal: $14.00
+Subtotal: $12.00
+
+Tip: $2.00
+
+Total: $14.00
+------------------------
+05-28-2025 01:19 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+
+Subtotal: $8.50
+Subtotal: $8.50
+
+Tip: $4.00
+
+Total: $12.50
+------------------------
+05-28-2025 01:23 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+
+Subtotal: $19.25
+
+Tip: $2.00
+
+Total: $21.25
+------------------------
+05-28-2025 01:27 PM
+
+8" white sandwich
+Toppings:
+-cheddar
+-lettuce
+-tomato
+Sauce: mayo
+Sandwich cost:     $8.50
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+Drink: cola       $3.00
+
+Subtotal: $22.25
+
+Tip: $0.00
+
+Total: $22.25
+
+------------------------------------------------
+05-28-2025 01:33 PM
+Chips: jalapeno      $1.50
+Drink: water        $3.00
+
+Subtotal: $4.50
+Tip: $1.00
+Total: $5.50
+
+------------------------
+------------------------
+05-28-2025 01:36 PM
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+Drink: fizz        $2.00
+
+Subtotal: $12.75
+Tip: $3.00
+Total: $15.75
+------------------------

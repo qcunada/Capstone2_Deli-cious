@@ -352,6 +352,15 @@ public class UserInterface {
     public void checkOut(){
         System.out.println("\n--------Order Details--------");
         System.out.println(currentOrder.getOrderDetails());
+        System.out.println("Enter tip amount: ");
+        double tip = scanner.nextDouble();
+        scanner.nextLine();
+        currentOrder.setTip(tip);
+
+        System.out.println("Tip: $" + String.format("%.2f", currentOrder.getTip()));
+        System.out.println("Final Total: $" + String.format("%.2f", currentOrder.getTotal()));
+
+
         System.out.println("------------------------------");
 
         System.out.print("Confirm order? (yes/no): ");

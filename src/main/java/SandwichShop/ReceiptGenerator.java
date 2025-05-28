@@ -10,7 +10,7 @@ public class ReceiptGenerator {
         String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm a"));
 
         try (FileWriter writer = new FileWriter("receipt.txt",true)) {
-            writer.write("------------------------\n" +timeStamp + "\n" + order.getOrderDetails() + "\n------------------------\n");
+            writer.write("\n------------------------\n" +timeStamp + "\n" + order.getOrderDetails() + "\n" +  String.format("Tip: $%.2f\n" , order.getTip()) + String.format("Total: $%.2f\n",order.getTotal()) + "------------------------");
         } catch (IOException e) {
             System.out.println("Error writing receipt: " + e.getMessage());
         }
