@@ -416,3 +416,47 @@ Subtotal: $12.75
 Tip: $3.00
 Total: $15.75
 ------------------------
+------------------------
+05-28-2025 02:34 PM
+Drink: fizz        $2.00
+
+8" wheat sandwich
+Toppings:
+-salami (extra)
+-roast beef (extra)
+-swiss (extra)
+-mozzarella (extra)
+-onion
+Sauce: vinaigrette
+Sandwich cost:     $17.20
+Drink: cola        $2.00
+
+Subtotal: $21.20
+Tip: $3.00
+Total: $24.20
+------------------------
+------------------------
+05-28-2025 03:31 PM
+
+12" wrap sandwich
+Toppings:
+-provolone
+-pickles
+-jalapenos
+Sauce: vinaigrette
+Sandwich cost:     $10.75
+
+12" wheat sandwich
+ (toasted)Toppings:
+-roast beef (extra)
+-american (extra)
+-onion
+Sauce: ranch
+Sandwich cost:     $16.15
+Drink: coffee        $3.00
+Drink: orange        $0.00
+
+Subtotal: $29.90
+Tip: $2.00
+Total: $31.90
+------------------------

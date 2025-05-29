@@ -1,9 +1,6 @@
 package SandwichShop;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 
 public class UserInterface {
@@ -44,9 +41,10 @@ public class UserInterface {
             System.out.println("\n     ======= ORDER MENU ======= \n What can I get you for your order?");
             System.out.println("    [1] \uD83E\uDD6A Choose my own Sandwich ");
             System.out.println("    [2] ⚙\uFE0F Build my own Sandwich ");
-            System.out.println("    [3] \uD83E\uDD64 Add Drink  ");
-            System.out.println("    [4] \uD83E\uDD54 Add Chips ");
-            System.out.println("    [5] \uD83E\uDDFE Checkout ");
+            System.out.println("    [3] \uD83C\uDFB2 Random Sandwich  ");
+            System.out.println("    [4] \uD83E\uDD64 Add Drink  ");
+            System.out.println("    [5] \uD83E\uDD54 Add Chips ");
+            System.out.println("    [6] \uD83E\uDDFE Checkout ");
             System.out.println("    [0] \uD83D\uDE80 Exit ");
             System.out.print("Choose an option: ");
 
@@ -56,9 +54,10 @@ public class UserInterface {
             switch (choice) {
                 case 1 -> chooseSandwich();
                 case 2 -> addSandwich();
-                case 3 -> addDrink();
-                case 4 -> addChips();
-                case 5 -> checkOut();
+                case 3 -> addRandomSandwich();
+                case 4 -> addDrink();
+                case 5 -> addChips();
+                case 6 -> checkOut();
                 case 0 -> {
                     System.out.println("\nOrder Cancelled. Taking you back to the main menu screen.");
                     return;
@@ -264,6 +263,49 @@ public class UserInterface {
         }
         currentOrder.addItem(sandwich);
     }
+
+    public void addRandomSandwich(){
+        Random random = new Random();
+
+        int[] sizes = {4, 8, 12};
+        String[] breads = {"white", "wheat","rye","wrap"};
+        String[] sauces = {"mayo", "mustard","ketchup","ranch","thousand islands", "vinaigrette"};
+        String[] meats = {"steak", "ham","salami","roast beef", "chicken","bacon"};
+        String[] cheeses = {"american", "provolone","cheddar","swiss","mozzarella"};
+        String[] regulars = {"lettuce", "tomato","onion","pickles","jalapenos"};
+
+        int size = sizes[random.nextInt(sizes.length)];
+        String bread = breads[random.nextInt(breads.length)];
+        String sauce = sauces[random.nextInt(breads.length)];
+        boolean toasted = random.nextBoolean();
+
+        Sandwich sandwich = new Sandwich(size,bread,sauce,toasted);
+
+        for(int i = 0; i < random.nextInt(3); i++){
+            String meat = meats[random.nextInt(meats.length)];
+            sandwich.addTopping(new PremiumTopping(meat,false,"meat"));
+        }
+        for (int i = 0; i < random.nextInt(2); i++){
+            String cheese = cheeses[random.nextInt(cheeses.length)];
+            sandwich.addTopping(new PremiumTopping(cheese,false,"cheese"));
+        }
+        for (int i = 0; i < random.nextInt(4); i ++){
+            String topping = regulars[random.nextInt(regulars.length)];
+            sandwich.addTopping(new RegularTopping(topping));
+        }
+        currentOrder.addItem(sandwich);
+        System.out.println("Your random sandwich have been added! ");
+        System.out.println(sandwich.getDescription());
+
+
+
+
+
+    }
+
+
+
+
 
     public void addDrink() {
 
